@@ -16,3 +16,12 @@ kafka-server-start /usr/local/etc/kafka/server.properties
 ```commandline
 kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic web-domains
 ```
+### Start producer
+```commandline
+kafka-console-producer --broker-list localhost:9092 --topic web-domains
+```
+
+### Start consumer
+```commandline
+kafka-console-consumer --bootstrap-server localhost:9092 --topic active.web-domains --from-beginning
+```
